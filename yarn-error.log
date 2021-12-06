@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/kyle/.nvm/versions/node/v16.13.0/bin/node /Users/kyle/.nvm/versions/node/v16.13.0/bin/yarn add @type/pump
+  /Users/kyle/.nvm/versions/node/v16.13.0/bin/node /Users/kyle/.nvm/versions/node/v16.13.0/bin/yarn test
 
 PATH: 
   /Users/kyle/.nvm/versions/node/v16.13.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/kyle/Documents/gitui:/Users/kyle/.nvm/versions/node/v16.13.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin
@@ -14,17 +14,12 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@type%2fpump: Not found
-      at Request.params.callback [as _callback] (/Users/kyle/.nvm/versions/node/v16.13.0/lib/node_modules/yarn/lib/cli.js:67029:18)
-      at Request.self.callback (/Users/kyle/.nvm/versions/node/v16.13.0/lib/node_modules/yarn/lib/cli.js:140883:22)
-      at Request.emit (node:events:390:28)
-      at Request.<anonymous> (/Users/kyle/.nvm/versions/node/v16.13.0/lib/node_modules/yarn/lib/cli.js:141855:10)
-      at Request.emit (node:events:390:28)
-      at IncomingMessage.<anonymous> (/Users/kyle/.nvm/versions/node/v16.13.0/lib/node_modules/yarn/lib/cli.js:141777:12)
-      at Object.onceWrapper (node:events:509:28)
-      at IncomingMessage.emit (node:events:402:35)
-      at endReadableNT (node:internal/streams/readable:1343:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  SyntaxError: /Users/kyle/Desktop/pretty-log/package.json: Unexpected token } in JSON at position 436
+      at JSON.parse (<anonymous>)
+      at /Users/kyle/.nvm/versions/node/v16.13.0/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/kyle/.nvm/versions/node/v16.13.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/kyle/.nvm/versions/node/v16.13.0/lib/node_modules/yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
@@ -36,6 +31,7 @@ npm manifest:
     "license": "GPL",
     "private": false,
     "dependencies": {
+      "@types/pump": "^1.1.1",
       "chalk": "^5.0.0",
       "pump": "^3.0.0",
       "typescript": "^4.5.2"
@@ -45,7 +41,8 @@ npm manifest:
       "testing": "bin/test.js"
     },
     "scripts": {
-      "start": "tsc && npm i -g && testing | pretty-log"
+      "test": "tsc && npm i -g && testing | pretty-log",
+      
     },
     "devDependencies": {
       "@types/node": "^16.11.11"
@@ -60,10 +57,17 @@ Lockfile:
   # yarn lockfile v1
   
   
-  "@types/node@^16.11.11":
+  "@types/node@*", "@types/node@^16.11.11":
     version "16.11.11"
     resolved "https://registry.npmjs.org/@types/node/-/node-16.11.11.tgz"
     integrity sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==
+  
+  "@types/pump@^1.1.1":
+    version "1.1.1"
+    resolved "https://registry.yarnpkg.com/@types/pump/-/pump-1.1.1.tgz#edb3475e2bad0f4552bdaa91c6c43b82e08ff15e"
+    integrity sha512-wpRerjHDxFBQ4r8XNv3xHJZeuqrBBoeQ/fhgkooV2F7KsPIYRROb/+f9ODgZfOEyO5/w2ej4YQdpPPXipT8DAA==
+    dependencies:
+      "@types/node" "*"
   
   chalk@^5.0.0:
     version "5.0.0"
