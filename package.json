@@ -1,0 +1,25 @@
+{
+  "name": "pretty-log",
+  "version": "1.0.0",
+  "main": "app.ts",
+  "author": "Kyle Johnson",
+  "type": "module",
+  "license": "GPL",
+  "private": false,
+  "dependencies": {
+    "@types/pump": "^1.1.1",
+    "chalk": "^5.0.0",
+    "pump": "^3.0.0",
+    "typescript": "^4.5.2"
+  },
+  "bin": {
+    "pretty-log": "bin/app.js",
+    "testing": "bin/test.js"
+  },
+  "scripts": {
+    "start": "tsc && npm i -g && testing | pretty-log"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.11"
+  }
+}
