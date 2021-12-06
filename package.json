@@ -13,11 +13,11 @@
     "typescript": "^4.5.2"
   },
   "bin": {
-    "pretty-log": "node bin/app.js",
+    "weld-log": "node bin/app.js",
     "testing": "bin/test.js"
   },
   "scripts": {
-    "test": "tsc && npm i -g && chmod u+x ./bin/test.js && chmod u+x ./bin/app.js && testing | pretty-log",
+    "test": "tsc && npm i -g && chmod u+x ./bin/test.js && chmod u+x ./bin/app.js && testing | weld-log",
     "make": "tsc && npm i -g && chmod u+x ./bin/test.js && chmod u+x ./bin/app.js"
   },
   "devDependencies": {
