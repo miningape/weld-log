@@ -13,7 +13,7 @@
     "typescript": "^4.5.2"
   },
   "bin": {
-    "weld-log": "node bin/app.js",
+    "weld-log": "bin/app.js",
     "testing": "bin/test.js"
   },
   "scripts": {
